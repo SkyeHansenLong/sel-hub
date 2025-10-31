@@ -1,554 +1,593 @@
-export default function SELWebsite() {
-  const stageImages = {
-    infancy:
-      "https://images.pexels.com/photos/3875216/pexels-photo-3875216.jpeg?auto=compress&cs=tinysrgb&w=800",
-    toddler:
-      "https://images.pexels.com/photos/8363844/pexels-photo-8363844.jpeg?auto=compress&cs=tinysrgb&w=800",
-    early:
-      "https://images.pexels.com/photos/8923057/pexels-photo-8923057.jpeg?auto=compress&cs=tinysrgb&w=800",
-  };
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Social & Emotional Learning (SEL) Hub for Educators</title>
 
-  const heroImage =
-    "https://images.pexels.com/photos/8363785/pexels-photo-8363785.jpeg?auto=compress&cs=tinysrgb&w=800";
+  <!-- Tailwind for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  const routineImage =
-    "https://images.pexels.com/photos/3662667/pexels-photo-3662667.jpeg?auto=compress&cs=tinysrgb&w=800";
+  <style>
+    /* soft radial background for some cards */
+    .subtle-bg {
+      background: radial-gradient(circle at top left, rgba(226,232,240,0.6) 0%, rgba(255,255,255,0) 60%);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-800">
 
-  const selfRegTeacherImage =
-    "https://images.pexels.com/photos/8422206/pexels-photo-8422206.jpeg?auto=compress&cs=tinysrgb&w=800";
+  <!-- HEADER -->
+  <header class="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-2xl md:text-3xl font-bold tracking-tight">
+        Social & Emotional Learning (SEL) Hub for Educators
+      </h1>
+      <a
+        href="#refs"
+        class="hidden md:inline-flex px-3 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 text-sm"
+      >
+        APA References
+      </a>
+    </div>
+  </header>
 
-  const selfRegHomeImage =
-    "https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=800";
+  <main class="max-w-6xl mx-auto px-4">
 
-  const stages = [
-    {
-      key: "infancy",
-      title: "Infancy (0–12 months)",
-      color: "from-rose-500 to-amber-500",
-      milestones: [
-        "Attachment bonds form; social smile (~6–8 weeks) and stranger anxiety (~8–10 months).",
-        "Beginnings of self‑soothing with adult co‑regulation (rocking, voice, pacifier); shifts to brief independent calming by late infancy.",
-        "Joint attention emerges (looking, pointing with caregiver), laying groundwork for language and social understanding.",
-      ],
-      teacherStrategies: [
-        "Responsive Routines: warm greetings, contingent vocal mirroring, and prompt comfort in early care settings to strengthen secure attachment cues.",
-        "Serve‑and‑Return Stations: short face‑to‑face games (peekaboo, mirror faces) to build joint attention and emotional reciprocity.",
-      ],
-      familyStrategies: [
-        'Consistent Co‑Regulation: predictable sleep/feeding routines; use narration of feelings ("You’re tired; we’re going to rock and breathe together").',
-        "Sensory‑Smart Soothing: white noise, swaddling, or gentle movement as appropriate; gradually lengthen pauses to encourage brief self‑settling.",
-      ],
-    },
-    {
-      key: "toddler",
-      title: "Toddlerhood (1–3 years)",
-      color: "from-emerald-500 to-teal-500",
-      milestones: [
-        'Rapid emotion expression; beginnings of impulse control with adult scaffolding ("stop", "wait").',
-        'Emerging self‑awareness ("me/mine"); parallel → associative play; early sharing/turn‑taking with cues.',
-        "Vocabulary of feelings expands (happy, mad, scared); simple problem‑solving with prompts.",
-      ],
-      teacherStrategies: [
-        "Emotion Coaching with Visuals: picture cue cards plus 3‑step routine — Name it → Breathe → Do (ask for help, choose a calm spot).",
-        'Guided Practice in Transitions: songs, visual timers, and "first‑then" boards; reinforce waiting and turn‑taking in centers.',
-      ],
-      familyStrategies: [
-        "Two‑Choice Limit Setting: offer two acceptable options to reduce power struggles and build autonomy.",
-        "Calm‑Down Basket: soft toy, chunky book, squeezy ball; practice during calm moments so it’s available when emotions rise.",
-      ],
-    },
-    {
-      key: "early",
-      title: "Early Childhood (3–5 years)",
-      color: "from-indigo-500 to-blue-600",
-      milestones: [
-        "Uses broader emotion vocabulary; begins perspective‑taking in cooperative play.",
-        "Improves behavioral inhibition; follows multi‑step routines with cues; recovers from disappointment with strategies.",
-        "Builds friendships; negotiates rules; understands fairness and simple empathy.",
-      ],
-      teacherStrategies: [
-        "Morning Feelings Check‑In: scale or emojis + brief regulation warm‑up (breaths, stretch); tie feelings to choices for the day.",
-        'Role‑Play & Social Stories: rehearse conflict scripts (asking to join, turn‑taking, "fix‑it" plans) aligned to AZELS social‑emotional strands.',
-      ],
-      familyStrategies: [
-        "Name‑It‑to‑Tame‑It: label feelings during routines and books; practice a matched strategy (count to 5, wall push, get a drink).",
-        "Chorelets: tiny pro‑social jobs (napkin helper, book buddy) to build contribution, pride, and responsibility.",
-      ],
-    },
-  ];
+    <!-- HERO / INTRO -->
+    <section id="top" class="py-10 md:py-16 grid md:grid-cols-2 gap-8 items-start">
+      <!-- text side -->
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+          Why SEL Matters Across the Lifespan
+        </h2>
 
-  const resources = [
-    {
-      title: "Arizona K–Adult Social and Emotional Learning Competencies",
-      authors: "Arizona Department of Education",
-      year: "2020",
-      detail:
-        "State SEL competencies; align classroom practices and local control decisions.",
-      doi: "https://www.azed.gov/sites/default/files/2020/09/ADOE%20Competencies_0.pdf",
-    },
-    {
-      title:
-        "Arizona Early Learning Standards (4th ed.) — Social‑Emotional Development Standard",
-      authors: "Arizona Department of Education",
-      year: "2023",
-      detail:
-        "State standards for ages 3–5; social‑emotional strands (Self; Relationships).",
-      doi: "https://www.azed.gov/sites/default/files/2023/04/Arizona%20Early%20Learning%20Standards%204th%20Edition.pdf",
-    },
-    {
-      title: "Social‑Emotional & Mental Health Resource Guide (MTSS‑aligned)",
-      authors: "Arizona Department of Education",
-      year: "2021",
-      detail:
-        "Strategies and resources for SEL implementation across tiers.",
-      doi: "https://www.azed.gov/sites/default/files/2021/04/SE%20and%20MH%20Resource%20Guide.pdf",
-    },
-    {
-      title:
-        "Beyond Preschool: Building Social & Emotional Skills in K‑3 (Part 3)",
-      authors: "Arizona Department of Education",
-      year: "2019",
-      detail:
-        "Practical strategies for embedding SEL in routines, transitions, and core lessons.",
-      doi: "https://www.azed.gov/sites/default/files/2019/05/Beyond%20Preschool%20SEL%20for%20K-3%20Part%203.pdf?id=5ccb4b8b1dcb25082009e9c0",
-    },
-    {
-      title:
-        "What It Feels Like to Be a Mother: Variations by Children’s Developmental Stages",
-      authors: "Luthar, S. S., & Ciciolla, L.",
-      year: "2016",
-      detail: "Developmental Psychology, 52(1), 143–154.",
-      doi: "https://doi.org/10.1037/dev0000062",
-    },
-    {
-      title: "Educational psychology: Developing learners (11th ed.)",
-      authors: "Ormrod, J. E., Anderman, E. M., & Anderman, L. H.",
-      year: "2024",
-      detail: "Pearson.",
-      doi: null,
-    },
-    {
-      title:
-        "Decision making by health and social care professionals to protect an unborn baby: Systematic narrative review",
-      authors: "Mc Elhinney, H., Taylor, B. J., & Sinclair, M.",
-      year: "2021",
-      detail: "Child Care in Practice, 27(3), 266–280.",
-      doi: "https://doi.org/10.1080/13575279.2019.1612733",
-    },
-    {
-      title:
-        "Where It All Begins: The Impact of Preconceptional and Prenatal Care on Early Childhood Development",
-      authors: "Lu, M. C., Bragonier, R., Silver, E. R., & Bemis‑Heys, R.",
-      year: "2001",
-      detail: "Building Community Systems for Young Children.",
-      doi: null,
-    },
-    {
-      title:
-        "Resiliency in the midst of risk: retention of women with limited resources in prenatal care",
-      authors: "Tough, S. C., Siever, J. E., Johnston, D. W., & Clarke, D.",
-      year: "2007",
-      detail:
-        "Expert Review of Obstetrics & Gynecology, 2(5), 631–639.",
-      doi: "https://doi.org/10.1586/17474108.2.5.631",
-    },
-  ];
-
-  const apaRefs = [
-    "Arizona Department of Education. (2020). *Arizona K–Adult Social and Emotional Learning Competencies*. https://www.azed.gov/sites/default/files/2020/09/ADOE%20Competencies_0.pdf",
-    "Arizona Department of Education. (2023). *Arizona Early Learning Standards (4th ed.)*. https://www.azed.gov/sites/default/files/2023/04/Arizona%20Early%20Learning%20Standards%204th%20Edition.pdf",
-    "Arizona Department of Education. (2021). *Social‑Emotional and Mental Health Resource Guide*. https://www.azed.gov/sites/default/files/2021/04/SE%20and%20MH%20Resource%20Guide.pdf",
-    "Arizona Department of Education. (2019). *Beyond Preschool: Building Social & Emotional Skills in K‑3 (Part 3)*. https://www.azed.gov/sites/default/files/2019/05/Beyond%20Preschool%20SEL%20for%20K-3%20Part%203.pdf?id=5ccb4b8b1dcb25082009e9c0",
-    "Luthar, S. S., & Ciciolla, L. (2016). What it feels like to be a mother: Variations by children’s developmental stages. *Developmental Psychology, 52*(1), 143–154. https://doi.org/10.1037/dev0000062",
-    "Mc Elhinney, H., Taylor, B. J., & Sinclair, M. (2021). Decision making by health and social care professionals to protect an unborn baby: Systematic narrative review. *Child Care in Practice, 27*(3), 266–280. https://doi.org/10.1080/13575279.2019.1612733",
-    "Ormrod, J. E., Anderman, E. M., & Anderman, L. H. (2024). *Educational psychology: Developing learners* (11th ed.). Pearson.",
-    "Lu, M. C., Bragonier, R., Silver, E. R., & Bemis‑Heys, R. (2001). *Where It All Begins: The Impact of Preconceptional and Prenatal Care on Early Childhood Development*. Building Community Systems for Young Children.",
-    "Tough, S. C., Siever, J. E., Johnston, D. W., & Clarke, D. (2007). Resiliency in the midst of risk: Retention of women with limited resources in prenatal care. *Expert Review of Obstetrics & Gynecology, 2*(5), 631–639. https://doi.org/10.1586/17474108.2.5.631",
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-800">
-      {/* Header */}
-      <header className="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-slate-200">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">
-            Social & Emotional Learning (SEL) Hub for Educators
-          </h1>
-          <a
-            href="#refs"
-            className="hidden md:inline-flex px-3 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 transition"
-          >
-            APA References
-          </a>
-        </div>
-      </header>
-
-      {/* Hero */}
-      <section className="max-w-6xl mx-auto px-4 py-10 md:py-16">
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          {/* Text side */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              Why SEL Matters Across the Lifespan
-            </h2>
-            <p className="mt-4 text-lg leading-relaxed">
-              Social and emotional learning begins <span className="font-semibold">before birth</span> and is shaped by
-              early caregiving, health care access, and developmental opportunities. High‑quality prenatal care and
-              supportive early environments influence stress systems, attachment, and executive functions that later
-              affect adolescents’ identity, relationships, and decision making (see resources below; Ormrod et al., 2024).
-            </p>
-            <ul className="mt-4 space-y-2 list-disc ml-6">
-              <li>
-                <span className="font-semibold">Prenatal care & early experiences → adolescent outcomes:</span> Stable
-                caregiving and health supports reduce toxic stress exposure, building resilience that protects teens
-                during heightened peer sensitivity and identity exploration.
-              </li>
-              <li>
-                <span className="font-semibold">Caregiver well‑being matters:</span> Parental stress varies by children’s
-                developmental stages, shaping the emotional climate teen learners bring to class (Luthar & Ciciolla,
-                2016).
-              </li>
-              <li>
-                <span className="font-semibold">Systems perspective:</span> Cross‑disciplinary decisions during
-                pregnancy can buffer risk and set the stage for positive SEL trajectories (Mc Elhinney et al., 2021; Lu
-                et al., 2001; Tough et al., 2007).
-              </li>
-            </ul>
-          </div>
-
-          {/* Quick Start card with image */}
-          <div className="rounded-3xl shadow-xl p-6 border border-slate-200 bg-white bg-[radial-gradient(circle_at_top_left,rgba(226,232,240,0.6),rgba(255,255,255,0)_60%)]">
-            <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-white">
-              <img
-                src={heroImage}
-                alt="Teacher and young child making eye contact at a table, modeling warm connection and co‑regulation"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <h3 className="text-xl font-semibold mt-4">Quick Start: Use Tomorrow</h3>
-            <ol className="mt-3 space-y-2 list-decimal ml-5 text-sm">
-              <li>Create a daily 2–3 minute regulation ritual (breathing, stretch, or brief journaling).</li>
-              <li>Teach 5–7 emotion words explicitly; post visuals and sentence stems.</li>
-              <li>Embed problem‑solving role‑plays in centers, small groups, and content lessons.</li>
-            </ol>
-            <p className="mt-3 text-xs text-slate-600">
-              Small, consistent practice wires skills more than one‑off lessons.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Stages Section */}
-      <section className="max-w-6xl mx-auto px-4 py-8">
-        {/* Early Development → Adolescent SEL */}
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold">
-            Effect of Early Development & Care on Adolescent SEL
-          </h2>
-          <p className="mt-3 leading-relaxed">
-            High‑quality prenatal care and responsive early caregiving reduce toxic stress and support formation of
-            secure attachment and executive functions—capacities that predict healthier adolescent identity work, peer
-            relationships, and self‑management in school contexts (Ormrod et al., 2024; Luthar & Ciciolla, 2016).
-            Cross‑disciplinary decisions to protect unborn babies and engage families early strengthen these
-            trajectories (Mc Elhinney et al., 2021; Lu et al., 2001; Tough et al., 2007). Arizona’s SEL Competencies and
-            AZELS provide a staged framework so these skills are taught explicitly across birth–K–12.
-          </p>
-          <ul className="mt-3 list-disc ml-6 text-sm">
-            <li>
-              <span className="font-semibold">Stress buffering:</span> Reliable co‑regulation in the first years
-              calibrates the HPA axis, lowering later reactivity in adolescence.
-            </li>
-            <li>
-              <span className="font-semibold">Attachment → Belonging:</span> Early secure base predicts stronger
-              classroom belonging and conflict resolution with peers.
-            </li>
-            <li>
-              <span className="font-semibold">Executive functions:</span> Early inhibition and working memory practice
-              set up middle‑childhood self‑management and teen goal pursuit.
-            </li>
-          </ul>
-        </div>
-
-        <h2 className="text-2xl md:text-3xl font-bold">SEL Milestones & Strategies by Stage</h2>
-        <p className="mt-2 text-slate-600">
-          Selected stages: Infancy (0–12 months), Toddlerhood (1–3 years), and Early Childhood (3–5 years)
+        <p class="mt-4 text-lg leading-relaxed">
+          Social and emotional learning begins
+          <span class="font-semibold">before birth</span>
+          and is shaped by early caregiving, access to health care, and consistent developmental opportunities.
+          High-quality prenatal care and responsive early environments influence the stress-response system,
+          secure attachment, and executive functions that later affect adolescents’ identity, peer relationships,
+          and decision making (Ormrod, Anderman, & Anderman, 2024).
         </p>
 
-        <div className="mt-6 grid md:grid-cols-3 gap-6">
-          {stages.map((s) => (
-            <div
-              key={s.key}
-              className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col"
-            >
-              {/* stage color bar */}
-              <div className={`h-2 bg-gradient-to-r ${s.color}`} />
+        <ul class="mt-4 space-y-2 list-disc ml-6 text-base">
+          <li>
+            <span class="font-semibold">Prenatal care & early experiences → adolescent outcomes:</span>
+            Stable caregiving and access to prenatal/early supports reduce toxic stress, building resilience that
+            helps teens handle peer pressure and identity work.
+          </li>
+          <li>
+            <span class="font-semibold">Caregiver well-being matters:</span>
+            Parent stress changes across a child’s developmental stages, and that climate shows up in the classroom
+            (Luthar & Ciciolla, 2016).
+          </li>
+          <li>
+            <span class="font-semibold">Systems perspective:</span>
+            Cross-disciplinary decisions during pregnancy and infancy (health, social work, education) can buffer
+            risk and set the stage for positive SEL (Mc Elhinney, Taylor, & Sinclair, 2021; Lu et al., 2001;
+            Tough et al., 2007). Arizona’s SEL Competencies and the Arizona Early Learning Standards (AZELS)
+            give us a framework to build these skills on purpose, not by accident.
+          </li>
+        </ul>
+      </div>
 
-              {/* stage image */}
-              <div className="aspect-[4/3] w-full overflow-hidden bg-white border-b border-slate-200">
-                <img
-                  src={stageImages[s.key as keyof typeof stageImages]}
-                  alt={
-                    s.key === "infancy"
-                      ? "Caregiver holding an infant chest‑to‑chest, providing calming support and eye contact"
-                      : s.key === "toddler"
-                      ? "Teacher kneeling with toddlers using visual cards to label feelings"
-                      : "Preschoolers and a teacher practicing turn‑taking with blocks, including visual supports"
-                  }
-                  className="h-full w-full object-cover"
-                />
-              </div>
-
-              {/* stage content */}
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-semibold">{s.title}</h3>
-
-                <div className="mt-4">
-                  <h4 className="font-semibold">Key Social/Emotional Milestones</h4>
-                  <ul className="mt-2 space-y-2 list-disc ml-5 text-sm">
-                    {s.milestones.map((m, i) => (
-                      <li key={i}>{m}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-4">
-                  <h4 className="font-semibold">Classroom SEL Strategies (Teachers)</h4>
-                  <ul className="mt-2 space-y-2 list-disc ml-5 text-sm">
-                    {s.teacherStrategies.map((m, i) => (
-                      <li key={i}>{m}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-4">
-                  <h4 className="font-semibold">Family Strategies (Home)</h4>
-                  <ul className="mt-2 space-y-2 list-disc ml-5 text-sm">
-                    {s.familyStrategies.map((m, i) => (
-                      <li key={i}>{m}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ))}
+      <!-- quick start card -->
+      <aside class="rounded-3xl shadow-xl p-6 border border-slate-200 bg-white subtle-bg">
+        <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          <img
+            src="https://images.pexels.com/photos/8363785/pexels-photo-8363785.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Teacher and young child making eye contact at a table, modeling warm connection and co-regulation"
+            class="h-full w-full object-cover"
+          />
         </div>
-      </section>
 
-      {/* Infant–Toddler Care Routines Section */}
-      <section className="max-w-6xl mx-auto px-4 py-8">
-        <div className="rounded-3xl border border-amber-200 bg-amber-50 p-6 shadow-sm grid md:grid-cols-2 gap-6 items-start">
-          <div>
-            <h3 className="text-xl font-semibold">
-              Infant–Toddler Care Routines = SEL (Use in Early Care Rooms)
-            </h3>
-            <p className="mt-2 text-slate-700">
-              Routines are the curriculum. Use predictable language, warm tone, and visual/gestural cues to turn care
-              moments into regulation and connection practice.
-            </p>
+        <h3 class="text-xl font-semibold mt-4">Quick Start: Use Tomorrow</h3>
+        <ol class="mt-3 space-y-2 list-decimal ml-5 text-sm">
+          <li>Create a daily 2–3 minute regulation ritual (breathing, stretch, or brief journaling).</li>
+          <li>Teach 5–7 emotion words explicitly; post visuals and sentence stems children can actually use.</li>
+          <li>Embed problem-solving role-plays in centers, small groups, and core lessons.</li>
+        </ol>
+        <p class="mt-3 text-xs text-slate-600">
+          Small, repeated practice wires skills more than one-time lessons.
+        </p>
+      </aside>
+    </section>
 
-            <div className="mt-4 grid sm:grid-cols-2 gap-4 text-sm">
-              <div className="rounded-2xl bg-white border border-slate-200 p-4">
-                <h4 className="font-semibold">Arrival/Good‑bye</h4>
-                <ul className="list-disc ml-5 mt-1 space-y-1">
-                  <li>
-                    Greeting script: “I’m happy you’re here. Let’s hang your coat, then choose a cozy book.”
-                  </li>
-                  <li>
-                    Visual routine card; offer comfort object; 30‑second co‑regulation (hold/rock/breathe).
-                  </li>
-                </ul>
-              </div>
+    <!-- EFFECT OF EARLY DEVELOPMENT -->
+    <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm mb-10">
+      <h2 class="text-2xl md:text-3xl font-bold">
+        Effect of Early Development & Care on Adolescent SEL
+      </h2>
 
-              <div className="rounded-2xl bg-white border border-slate-200 p-4">
-                <h4 className="font-semibold">Diapering/Toileting</h4>
-                <ul className="list-disc ml-5 mt-1 space-y-1">
-                  <li>
-                    Sports‑caster talk to build trust & language: “I’m lifting you now… warm wipe… all done.”
-                  </li>
-                  <li>
-                    Choice for toddlers: “Wipes or tissue first?” + hand‑over‑hand to invite participation.
-                  </li>
-                </ul>
-              </div>
+      <p class="mt-3 leading-relaxed text-base">
+        High-quality prenatal care and responsive early caregiving reduce toxic stress and support secure
+        attachment and executive functions. These early foundations predict healthier adolescent identity work,
+        peer relationships, and self-management in school settings (Ormrod et al., 2024; Luthar & Ciciolla, 2016).
+        Arizona’s SEL Competencies and AZELS (Arizona Department of Education) give schools and families a shared
+        language for skills like self-awareness, self-management, and relationship skills all the way from birth
+        through K–12.
+      </p>
 
-              <div className="rounded-2xl bg-white border border-slate-200 p-4">
-                <h4 className="font-semibold">Feeding/Mealtimes</h4>
-                <ul className="list-disc ml-5 mt-1 space-y-1">
-                  <li>Serve‑and‑return: wait for eye contact/gesture, then label feeling and needs.</li>
-                  <li>
-                    Toddler script: “Pause spoon, breathe… your turn.” Build waiting & turn‑taking.
-                  </li>
-                </ul>
-              </div>
+      <ul class="mt-4 list-disc ml-6 text-sm space-y-2">
+        <li>
+          <span class="font-semibold">Stress buffering:</span>
+          Reliable co-regulation in infants and toddlers helps “tune” the child’s stress system so it is less
+          explosive in adolescence.
+        </li>
+        <li>
+          <span class="font-semibold">Attachment → belonging:</span>
+          Early secure attachment predicts stronger feelings of classroom belonging and healthier conflict resolution
+          with peers later.
+        </li>
+        <li>
+          <span class="font-semibold">Executive functions:</span>
+          Early practice with impulse control and working memory lays the groundwork for middle-childhood self-control
+          and teen goal setting.
+        </li>
+      </ul>
+    </section>
 
-              <div className="rounded-2xl bg-white border border-slate-200 p-4">
-                <h4 className="font-semibold">Sleep/Nap Transitions</h4>
-                <ul className="list-disc ml-5 mt-1 space-y-1">
-                  <li>Consistent 2‑minute wind‑down: dim lights, soft hum, two deep breaths together.</li>
-                  <li>
-                    For wake‑ups: orient gently—“Good afternoon, body stretch, sip of water, book corner.”
-                  </li>
-                </ul>
-              </div>
-            </div>
+    <!-- AGE-BY-AGE CARDS -->
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold">
+        SEL Milestones & Strategies by Stage
+      </h2>
+      <p class="mt-2 text-slate-600 text-sm md:text-base">
+        Stages highlighted here: Infancy (0–12 months), Toddlerhood (1–3 years), Early Childhood (3–5 years).
+        Each stage lines up with Arizona Early Learning Standards (social-emotional strands “Self” and “Relationships”)
+        and the Arizona SEL Competencies.
+      </p>
 
-            <p className="mt-3 text-xs text-slate-600">
-              Aligned with AZELS Social‑Emotional (Self; Relationships) and ADE SEL Competencies.
-            </p>
-          </div>
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
 
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-white">
+        <!-- INFANCY -->
+        <article class="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col">
+          <!-- color bar -->
+          <div class="h-2 bg-gradient-to-r from-rose-500 to-amber-500"></div>
+
+          <!-- image -->
+          <div class="aspect-[4/3] w-full overflow-hidden bg-white border-b border-slate-200">
             <img
-              src={routineImage}
-              alt="Educator soothing a toddler with a gentle touch and calm body posture during a routine transition"
-              className="h-full w-full object-cover"
+              src="https://images.pexels.com/photos/3875216/pexels-photo-3875216.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Caregiver holding an infant chest-to-chest, providing calming support and steady eye contact"
+              class="h-full w-full object-cover"
             />
           </div>
-        </div>
-      </section>
 
-      {/* Self‑Regulation Section */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
-          {/* Teacher side */}
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-            <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-white mb-4">
-              <img
-                src={selfRegTeacherImage}
-                alt="Teacher sitting eye‑level with a child, practicing calm breathing together"
-                className="h-full w-full object-cover"
-              />
-            </div>
+          <!-- content -->
+          <div class="p-6 flex flex-col flex-1 text-sm leading-relaxed">
+            <h3 class="text-xl font-semibold">Infancy (0–12 months)</h3>
 
-            <h2 className="text-2xl font-bold">What Is Self‑Regulation?</h2>
-            <p className="mt-3 leading-relaxed">
-              <span className="font-semibold">Self‑regulation</span> is the ability to monitor and modulate thoughts,
-              emotions, and behaviors to meet goals and social expectations. It draws on executive functions
-              (attention, inhibition, working memory) and emotion regulation. Examples include pausing before
-              responding during conflict, using a coping strategy when anxious, and persisting on a challenging task
-              by chunking steps (Ormrod et al., 2024).
-            </p>
+            <h4 class="font-semibold mt-4">Key Social/Emotional Milestones</h4>
+            <ul class="mt-2 list-disc ml-5 space-y-2">
+              <li>Attachment bonds; social smile (~6–8 weeks); stranger anxiety (~8–10 months).</li>
+              <li>Beginnings of self-soothing with adult co-regulation (rocking, calm voice, pacifier); brief independent calming appears late in infancy.</li>
+              <li>Joint attention (looking/pointing with caregiver), which lays a foundation for language and shared understanding.</li>
+            </ul>
 
-            <h3 className="mt-4 font-semibold">Teacher Modeling & Encouragement</h3>
-            <ul className="mt-2 space-y-2 list-disc ml-5 text-sm">
+            <h4 class="font-semibold mt-4">Classroom / Program SEL Strategies</h4>
+            <ul class="mt-2 list-disc ml-5 space-y-2">
               <li>
-                <span className="font-semibold">Think‑Alouds:</span> Narrate planning, emotion labeling, and strategy
-                selection ("I feel frustrated, so I’ll breathe and break this into two steps").
+                <span class="font-semibold">Responsive routines:</span>
+                warm greetings, mirroring baby sounds, and prompt comfort to build secure attachment.
               </li>
               <li>
-                <span className="font-semibold">Routine Practice:</span> Embed a short regulation warm‑up (breath,
-                stretch, mantra) at the same time daily; pair with visual cue.
+                <span class="font-semibold">Serve-and-return:</span>
+                short face-to-face games (peekaboo, copying facial expressions) to build trust and early reciprocity.
+              </li>
+            </ul>
+
+            <h4 class="font-semibold mt-4">Family Strategies (Home)</h4>
+            <ul class="mt-2 list-disc ml-5 space-y-2">
+              <li>
+                <span class="font-semibold">Co-regulation:</span>
+                predictable feeding/sleep routines; narrate feelings (“You’re tired, we’re going to rock and breathe together”).
               </li>
               <li>
-                <span className="font-semibold">Goal‑Setting & Reflection:</span> Use simple SMART goals and two‑minute
-                exit reflections linking strategies used to outcomes.
+                <span class="font-semibold">Sensory-smart soothing:</span>
+                swaddling, gentle motion, white noise as appropriate; slowly lengthen pauses to build tiny moments of self-settling.
               </li>
             </ul>
           </div>
+        </article>
 
-          {/* Home side */}
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-            <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-white mb-4">
-              <img
-                src={selfRegHomeImage}
-                alt="Parent and child using a visual routine chart together at home to practice self‑regulation"
-                className="h-full w-full object-cover"
-              />
-            </div>
+        <!-- TODDLERHOOD -->
+        <article class="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col">
+          <div class="h-2 bg-gradient-to-r from-emerald-500 to-teal-500"></div>
 
-            <h2 className="text-2xl font-bold">Home Practices to Support Regulation</h2>
-            <p className="mt-3">Share these with families (adjust language per stage):</p>
-            <ul className="mt-2 space-y-2 list-disc ml-5 text-sm">
+          <div class="aspect-[4/3] w-full overflow-hidden bg-white border-b border-slate-200">
+            <img
+              src="https://images.pexels.com/photos/8363844/pexels-photo-8363844.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Teacher kneeling with toddlers using picture cards to label and talk about feelings"
+              class="h-full w-full object-cover"
+            />
+          </div>
+
+          <div class="p-6 flex flex-col flex-1 text-sm leading-relaxed">
+            <h3 class="text-xl font-semibold">Toddlerhood (1–3 years)</h3>
+
+            <h4 class="font-semibold mt-4">Key Social/Emotional Milestones</h4>
+            <ul class="mt-2 list-disc ml-5 space-y-2">
+              <li>Big feelings + first impulse control with adult scaffolding (“stop,” “wait”).</li>
+              <li>Emerging self-awareness (“me/mine”); parallel → associative play; early sharing and turn-taking with coaching.</li>
+              <li>Emotion vocabulary grows (“happy,” “mad,” “scared”); toddlers start basic problem-solving with adult prompts.</li>
+            </ul>
+
+            <h4 class="font-semibold mt-4">Classroom SEL Strategies (Teachers)</h4>
+            <ul class="mt-2 list-disc ml-5 space-y-2">
               <li>
-                <span className="font-semibold">Co‑Regulate First:</span> Adult calm precedes child calm. Use low voice,
-                slow body, and proximity before coaching skills.
+                <span class="font-semibold">Emotion coaching + visuals:</span>
+                teach a simple 3-step “Name it → Breathe → Do,” using picture cards and a cozy calm corner.
               </li>
               <li>
-                <span className="font-semibold">Name + Strategy:</span> Label the feeling and immediately pair a tool
-                (breath, sip water, walk, squeeze ball).
+                <span class="font-semibold">Guided transitions:</span>
+                songs, visual timers, and “first-then” boards; practice waiting and turn-taking in centers.
+              </li>
+            </ul>
+
+            <h4 class="font-semibold mt-4">Family Strategies (Home)</h4>
+            <ul class="mt-2 list-disc ml-5 space-y-2">
+              <li>
+                <span class="font-semibold">Two-choice limits:</span>
+                offer two acceptable options (“blue cup or red cup?”) to reduce power struggles and build autonomy.
               </li>
               <li>
-                <span className="font-semibold">Predictable Routines:</span> Morning/bedtime checklists and visual
-                timers reduce conflict and build autonomy.
-              </li>
-              <li>
-                <span className="font-semibold">Repair & Reconnect:</span> After conflict, model accountability ("I was
-                short‑tempered. I’m sorry. Let’s try again.").
+                <span class="font-semibold">Calm-down basket:</span>
+                soft toy, chunky book, squeeze ball. Practice using it during calm times so it’s familiar when emotions spike.
               </li>
             </ul>
           </div>
-        </div>
-      </section>
+        </article>
 
-      {/* Resource Cards */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-2xl md:text-3xl font-bold">Evidence & Further Reading</h2>
-        <p className="mt-2 text-slate-600">
-          Key sources informing the guidance on prenatal care, caregiver well‑being, Arizona alignment, and classroom
-          regulation practices.
-        </p>
-        <div className="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {resources.map((r, idx) => (
-            <article
-              key={idx}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-            >
-              <h3 className="font-semibold leading-snug">{r.title}</h3>
-              <p className="text-sm text-slate-600 mt-1">
-                {r.authors} ({r.year}). {r.detail}
-              </p>
-              {r.doi && (
-                <a
-                  href={r.doi}
-                  className="inline-block mt-3 text-sm underline decoration-2 underline-offset-4"
-                >
-                  Open DOI
-                </a>
-              )}
-            </article>
-          ))}
-        </div>
-      </section>
+        <!-- EARLY CHILDHOOD -->
+        <article class="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col">
+          <div class="h-2 bg-gradient-to-r from-indigo-500 to-blue-600"></div>
 
-      {/* Download/Print & APA */}
-      <section id="refs" className="max-w-6xl mx-auto px-4 py-12">
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-bold">APA Reference List</h2>
-          <ol className="mt-4 space-y-2 list-decimal ml-5">
-            {apaRefs.map((a, i) => (
-              <li key={i} className="text-sm leading-relaxed">
-                {a}
-              </li>
-            ))}
-          </ol>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <button
-              onClick={() => window.print()}
-              className="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-100"
-            >
-              Print or Save as PDF
-            </button>
-            <a
-              href="#top"
-              className="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-100"
-            >
-              Back to Top
-            </a>
+          <div class="aspect-[4/3] w-full overflow-hidden bg-white border-b border-slate-200">
+            <img
+              src="https://images.pexels.com/photos/8923057/pexels-photo-8923057.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Preschoolers and teacher practicing turn-taking with blocks and social supports"
+              class="h-full w-full object-cover"
+            />
           </div>
-        </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-600">
-        <p className="mb-2">
-          Built as a single‑file, free site you can host on GitHub Pages, Netlify, or Vercel. © {new Date().getFullYear()}{" "}
-          SEL Hub
+          <div class="p-6 flex flex-col flex-1 text-sm leading-relaxed">
+            <h3 class="text-xl font-semibold">Early Childhood (3–5 years)</h3>
+
+            <h4 class="font-semibold mt-4">Key Social/Emotional Milestones</h4>
+            <ul class="mt-2 list-disc ml-5 space-y-2">
+              <li>Broader emotion words; begins perspective-taking in cooperative play.</li>
+              <li>Improves impulse control; follows multi-step routines with cues; can recover from disappointment with strategies.</li>
+              <li>Builds friendships; negotiates rules; understands fairness and simple empathy.</li>
+            </ul>
+
+            <h4 class="font-semibold mt-4">Classroom SEL Strategies (Teachers)</h4>
+            <ul class="mt-2 list-disc ml-5 space-y-2">
+              <li>
+                <span class="font-semibold">Morning feelings check-in:</span>
+                kids point to an emoji/face or color zone, then everyone does a short regulation warm-up (breathing, stretch).
+              </li>
+              <li>
+                <span class="font-semibold">Role-play & social stories:</span>
+                act out “asking to join,” “turn-taking,” and “fix-it plans.” This directly matches AZELS social-emotional standards.
+              </li>
+            </ul>
+
+            <h4 class="font-semibold mt-4">Family Strategies (Home)</h4>
+            <ul class="mt-2 list-disc ml-5 space-y-2">
+              <li>
+                <span class="font-semibold">Name-it-to-tame-it:</span>
+                label feelings during routines and story time; pair each feeling with a strategy (count to 5, wall push, get a drink).
+              </li>
+              <li>
+                <span class="font-semibold">“Chorelets” (tiny helper jobs):</span>
+                napkin helper, book buddy, plant waterer. These build pride, empathy, and responsibility.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- INFANT–TODDLER CARE ROUTINES = SEL -->
+    <section class="mb-12">
+      <div class="rounded-3xl border border-amber-200 bg-amber-50 p-6 shadow-sm grid md:grid-cols-2 gap-6 items-start">
+        <div>
+          <h3 class="text-xl font-semibold">
+            Infant–Toddler Care Routines = SEL (Use in Early Care Rooms)
+          </h3>
+
+          <p class="mt-2 text-slate-700 text-sm leading-relaxed">
+            Routines are the curriculum. Use predictable language, warm tone, and gentle physical presence to turn
+            diapers, mealtimes, arrivals, and naps into moments of co-regulation and trust.
+          </p>
+
+          <div class="mt-4 grid sm:grid-cols-2 gap-4 text-sm leading-relaxed">
+            <div class="rounded-2xl bg-white border border-slate-200 p-4">
+              <h4 class="font-semibold">Arrival / Good-bye</h4>
+              <ul class="list-disc ml-5 mt-1 space-y-1">
+                <li>“I’m happy you’re here. Let’s hang your coat, then choose a cozy book.”</li>
+                <li>Visual routine card + comfort object + 30-second calm snuggle.</li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl bg-white border border-slate-200 p-4">
+              <h4 class="font-semibold">Diapering / Toileting</h4>
+              <ul class="list-disc ml-5 mt-1 space-y-1">
+                <li>“Sports-caster” talk (“I’m lifting you now… warm wipe… all done”) builds safety and language.</li>
+                <li>Offer simple choices (“Wipes or tissue first?”) to build agency.</li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl bg-white border border-slate-200 p-4">
+              <h4 class="font-semibold">Feeding / Mealtimes</h4>
+              <ul class="list-disc ml-5 mt-1 space-y-1">
+                <li>Serve-and-return: pause, watch their face/gesture, respond to the cue.</li>
+                <li>“Pause spoon, breathe… your turn.” Practice waiting & turn-taking.</li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl bg-white border border-slate-200 p-4">
+              <h4 class="font-semibold">Sleep / Nap Transitions</h4>
+              <ul class="list-disc ml-5 mt-1 space-y-1">
+                <li>2-minute wind-down: low light, soft hum, two shared deep breaths.</li>
+                <li>Gentle wake-up script: “Good afternoon, stretch your body, sip of water, let’s get a book.”</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="mt-3 text-xs text-slate-600">
+            Aligned with AZELS Social-Emotional (Self; Relationships) and Arizona SEL Competencies.
+          </p>
+        </div>
+
+        <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          <img
+            src="https://images.pexels.com/photos/3662667/pexels-photo-3662667.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Educator soothing a toddler with calm touch and gentle eye contact during a routine transition"
+            class="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- SELF-REGULATION / HOME PRACTICES -->
+    <section class="mb-12 grid lg:grid-cols-2 gap-8 items-start">
+      <!-- teacher / classroom side -->
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-white mb-4">
+          <img
+            src="https://images.pexels.com/photos/8422206/pexels-photo-8422206.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Teacher sitting eye-level with a child, practicing calm breathing together"
+            class="h-full w-full object-cover"
+          />
+        </div>
+
+        <h2 class="text-2xl font-bold">What Is Self-Regulation?</h2>
+
+        <p class="mt-3 leading-relaxed text-sm md:text-base">
+          <span class="font-semibold">Self-regulation</span> is the ability to monitor and adjust our thoughts,
+          emotions, and behaviors so we can meet goals and follow shared expectations. It depends on executive
+          functions (attention, impulse control, working memory) and emotion regulation. A regulated child can:
+          pause before reacting in conflict, use a coping strategy when anxious, and stick with a hard task by
+          breaking it into steps (Ormrod et al., 2024).
         </p>
-        <p className="italic text-slate-700">
-          “Speak up for those who cannot speak for themselves; ensure justice for those being crushed.” —{" "}
-          <span className="font-semibold">Proverbs 31:8</span>
+
+        <h3 class="mt-4 font-semibold text-base md:text-lg">How Teachers Model & Encourage It</h3>
+        <ul class="mt-2 space-y-2 list-disc ml-5 text-sm leading-relaxed">
+          <li>
+            <span class="font-semibold">Think-alouds:</span>
+            “I feel frustrated, so I’m going to take three breaths and split this job into two parts.”
+            Kids need to hear adults narrate calm problem-solving.
+          </li>
+          <li>
+            <span class="font-semibold">Routine practice:</span>
+            A tiny daily regulation warm-up (breathing, stretch, mantra) at the same time every day builds predictability.
+          </li>
+          <li>
+            <span class="font-semibold">Goal-setting & reflection:</span>
+            Two-minute end-of-day check-ins: “Which strategy helped you calm today?” This links strategy → success.
+          </li>
+        </ul>
+      </article>
+
+      <!-- home / family side -->
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-white mb-4">
+          <img
+            src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Parent and child using a simple visual routine chart together at home"
+            class="h-full w-full object-cover"
+          />
+        </div>
+
+        <h2 class="text-2xl font-bold">Home Practices to Support Regulation</h2>
+
+        <p class="mt-3 text-sm md:text-base">
+          Share these ideas with families in simple, encouraging language. They match what you’re doing in class.
         </p>
-      </footer>
-    </div>
-  );
-}
+
+        <ul class="mt-2 space-y-2 list-disc ml-5 text-sm leading-relaxed">
+          <li>
+            <span class="font-semibold">Co-regulate first:</span>
+            Adult calm comes before child calm. Soften the voice, slow your body, get close, then coach.
+          </li>
+          <li>
+            <span class="font-semibold">Name + strategy:</span>
+            “You’re frustrated. Let’s squeeze the ball and count to 5.” Always pair the feeling with a tool.
+          </li>
+          <li>
+            <span class="font-semibold">Predictable routines:</span>
+            Morning/bedtime picture charts and visual timers lower power struggles and build independence.
+          </li>
+          <li>
+            <span class="font-semibold">Repair & reconnect:</span>
+            After conflict: “I yelled. I’m sorry. Let’s try again.” That models accountability and restores safety.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- RESOURCES GRID -->
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold">Evidence & Further Reading</h2>
+      <p class="mt-2 text-slate-600 text-sm md:text-base">
+        These sources inform prenatal care → resilience, caregiver stress, Arizona SEL alignment, and practical
+        classroom / home strategies.
+      </p>
+
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm leading-relaxed">
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold leading-snug">
+            Arizona K–Adult Social and Emotional Learning Competencies
+          </h3>
+          <p class="text-slate-600 mt-1">
+            Arizona Department of Education (2020). State SEL competencies; align classroom practices and local
+            decision-making across K–12.
+          </p>
+        </article>
+
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold leading-snug">
+            Arizona Early Learning Standards (4th ed.) – Social-Emotional Domain
+          </h3>
+          <p class="text-slate-600 mt-1">
+            Arizona Department of Education (2023). Standards for ages 3–5 describing “Self” and “Relationships,”
+            including emotion regulation, empathy, and cooperative play.
+          </p>
+        </article>
+
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold leading-snug">
+            Social-Emotional & Mental Health Resource Guide (MTSS-aligned)
+          </h3>
+          <p class="text-slate-600 mt-1">
+            Arizona Department of Education (2021). Concrete Tier 1 / Tier 2 classroom supports educators can use
+            to embed regulation routines and mental health check-ins.
+          </p>
+        </article>
+
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold leading-snug">
+            Beyond Preschool: Building SEL in K-3 (Part 3)
+          </h3>
+          <p class="text-slate-600 mt-1">
+            Arizona Department of Education (2019). How to carry SEL forward beyond preschool using routines,
+            transitions, and explicit instruction in K–3.
+          </p>
+        </article>
+
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold leading-snug">
+            Caregiver Stress Across Development
+          </h3>
+          <p class="text-slate-600 mt-1">
+            Luthar, S. S., & Ciciolla, L. (2016). Parents’ emotional strain changes as children grow, which directly
+            affects the emotional climate students bring to school.
+          </p>
+        </article>
+
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold leading-snug">
+            Prenatal Decision-Making and Protection
+          </h3>
+          <p class="text-slate-600 mt-1">
+            Mc Elhinney, H., Taylor, B. J., & Sinclair, M. (2021); Lu, M. C., Bragonier, R., Silver, E. R., & Bemis-Heys,
+            R. (2001); Tough, S. C., Siever, J. E., Johnston, D. W., & Clarke, D. (2007). Early coordinated support
+            can buffer risk and build resilience even in high-stress pregnancies.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- APA REFERENCES -->
+    <section id="refs" class="mb-16">
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold">APA Reference List</h2>
+
+        <ol class="mt-4 space-y-2 list-decimal ml-5 text-sm leading-relaxed">
+          <li>
+            Arizona Department of Education. (2019).
+            <em> Beyond Preschool: Building Social & Emotional Skills in K-3 (Part 3)</em>.
+          </li>
+          <li>
+            Arizona Department of Education. (2020).
+            <em> Arizona K–Adult Social and Emotional Learning Competencies</em>.
+          </li>
+          <li>
+            Arizona Department of Education. (2021).
+            <em> Social-Emotional and Mental Health Resource Guide</em>.
+          </li>
+          <li>
+            Arizona Department of Education. (2023).
+            <em> Arizona Early Learning Standards (4th ed.)</em>.
+          </li>
+          <li>
+            Luthar, S. S., & Ciciolla, L. (2016).
+            What it feels like to be a mother: Variations by children’s developmental stages.
+            <em> Developmental Psychology, 52</em>(1), 143–154.
+            https://doi.org/10.1037/dev0000062
+          </li>
+          <li>
+            Mc Elhinney, H., Taylor, B. J., & Sinclair, M. (2021).
+            Decision making by health and social care professionals to protect an unborn baby: Systematic narrative review.
+            <em> Child Care in Practice, 27</em>(3), 266–280.
+            https://doi.org/10.1080/13575279.2019.1612733
+          </li>
+          <li>
+            Ormrod, J. E., Anderman, E. M., & Anderman, L. H. (2024).
+            <em> Educational psychology: Developing learners</em> (11th ed.). Pearson.
+          </li>
+          <li>
+            Lu, M. C., Bragonier, R., Silver, E. R., & Bemis-Heys, R. (2001).
+            <em> Where It All Begins: The Impact of Preconceptional and Prenatal Care on Early Childhood Development</em>.
+            Building Community Systems for Young Children.
+          </li>
+          <li>
+            Tough, S. C., Siever, J. E., Johnston, D. W., & Clarke, D. (2007).
+            Resiliency in the midst of risk: Retention of women with limited resources in prenatal care.
+            <em> Expert Review of Obstetrics & Gynecology, 2</em>(5), 631–639.
+            https://doi.org/10.1586/17474108.2.5.631
+          </li>
+        </ol>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 text-sm"
+          >
+            Print or Save as PDF
+          </button>
+
+          <a
+            href="#top"
+            class="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 text-sm"
+          >
+            Back to Top
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200 py-8 text-center text-sm text-slate-600 bg-white">
+    <p class="mb-2">
+      Built as a free resource for educators and families. © <span id="year"></span> SEL Hub
+    </p>
+    <p class="italic text-slate-700 max-w-xl mx-auto">
+      “Speak up for those who cannot speak for themselves; ensure justice for those being crushed.”
+      — <span class="font-semibold">Proverbs 31:8</span>
+    </p>
+  </footer>
+
+  <script>
+    // put current year in footer automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
