@@ -574,20 +574,16 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-slate-200 py-8 text-center text-sm text-slate-600 bg-white">
-    <p class="mb-2">
-      Built as a free resource for educators and families. © <span id="year"></span> SEL Hub
-    </p>
-    <p class="italic text-slate-700 max-w-xl mx-auto">
-      “Speak up for those who cannot speak for themselves; ensure justice for those being crushed.”
-      — <span class="font-semibold">Proverbs 31:8</span>
-    </p>
-  </footer>
-
-  <script>
-    // put current year in footer automatically
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-</body>
-</html>
+  <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-600">
+        <p className="mb-2">
+          Built for educators and families by <span className="font-semibold">Skye Hansen Long</span>.
+          © {new Date().getFullYear()} SEL Hub • Free to share for learning and support.
+        </p>
+        <p className="italic text-slate-700 max-w-xl mx-auto">
+          “Speak up for those who cannot speak for themselves; ensure justice for those being crushed.” —
+          <span className="font-semibold"> Proverbs 31:8</span>
+        </p>
+      </footer>
+    </div>
+  );
+}
